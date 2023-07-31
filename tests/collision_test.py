@@ -1,7 +1,7 @@
 import sys
 sys.path.append('..')
 
-from occupancy_map.occupancy import CellState
+from occupancy_map.abstract import CellState
 from occupancy_map.sample import sample_map
 from occupancy_map.pose import Pose
 from occupancy_map.map_object import Sphere, Point

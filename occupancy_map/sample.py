@@ -1,5 +1,5 @@
 import numpy as np
-from .occupancy import make_map
+from occupancy_map.map import make_map
 
 
 rng = np.random.default_rng()

@@ -1,5 +1,5 @@
 import numpy as np
-from occupancy_map.occupancy import CellState
+from occupancy_map.abstract import CellState
 from occupancy_map.pose import Pose
 
 

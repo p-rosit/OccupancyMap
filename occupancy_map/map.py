@@ -4,51 +4,16 @@ import math
 
 from occupancy_map.pose import Pose
 from occupancy_map.map_object import AxisAlignedRect, Point
-
-
-class CellState:
-    empty = 0
-    occupied = 1
-    unknown = 2
-    _recurse = 3
-
-    @staticmethod
-    def col(state, transparent=False):
-        if transparent:
-            return CellState._transparent_col(state)
-
-        if state is CellState.empty:
-            col = (0.9, 0.9, 0.9)
-        elif state is CellState.occupied:
-            col = (0.1, 0.1, 0.1)
-        elif state is CellState.unknown:
-            col = (0.6, 0.6, 0.1)
-        else:
-            raise ValueError
-
-        return col
-
-    def _transparent_col(state):
-        col = CellState.col(state)
-        if state is CellState.empty:
-            col = (*col, 0.0)
-        elif state is CellState.occupied:
-            col = (*col, 0.2)
-        elif state is CellState.unknown:
-            col = (*col, 0.2)
-        else:
-            raise ValueError
-
-        return col
+from occupancy_map.abstract import CellState
 
 
 def make_map(low_corner, high_corner):
-    grid = OccupancyGrid(dim=low_corner.shape[0], state=CellState.unknown)
+    grid = Map(dim=low_corner.shape[0], state=CellState.unknown)
     grid.set_corners(low_corner, high_corner)
     return grid
 
 
-class OccupancyGrid:
+class Map:
     # ----- Init functions -----
     def __init__(self, dim=None, grid=None, state=CellState._recurse):
         if dim is None and grid is None:
@@ -194,7 +159,7 @@ class OccupancyGrid:
             )
 
         self.grid = self._split(
-            OccupancyGrid(dim=self.dim, state=self.state),
+            Map(dim=self.dim, state=self.state),
             shape
         )
 

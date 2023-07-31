@@ -4,7 +4,7 @@ sys.path.append('..')
 import numpy as np
 
 from occupancy_map.pose import Pose, Position
-from occupancy_map.occupancy import CellState
+from occupancy_map.abstract import CellState
 from occupancy_map.sample import sample_map
 from occupancy_map.map_object import Sphere, Polygon
 from visualize.visualize import MapWindow

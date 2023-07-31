@@ -5,7 +5,7 @@ from occupancy_map.pose import Pose
 from occupancy_map.map_object import Point, Sphere
 from occupancy_map.sample import sample_map
 from planner.rrt import PlannerRRT
-from planner.repeated_rrt import RepeatedPlanner
+from planner.repeated_planner import RepeatedPlanner
 from visualize.visualize import MapWindow
 
 

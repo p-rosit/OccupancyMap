@@ -7,7 +7,7 @@ from matplotlib.widgets import Slider
 
 from occupancy_map.pose import Pose
 from occupancy_map.map_object import Point
-from occupancy_map.occupancy import CellState
+from occupancy_map.abstract import CellState
 from occupancy_map.sample import sample_map
 from visualize.visualize import MapWindow
 

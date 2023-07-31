@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d.art3d as art3d
 import matplotlib.patches as patches
 
-from occupancy_map.occupancy import CellState
+from occupancy_map.abstract import CellState
 from occupancy_map.map_object import AxisAlignedRect, Point, Sphere, Polygon
 
 
